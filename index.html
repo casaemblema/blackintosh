@@ -39,7 +39,7 @@
       min-height: 100%;
       position: relative;
       background: #ffffff;
-      top: 340px; /* espacio para header fijo con avatar */
+      top: 360px; /* espacio para header fijo con avatar */
     }
 
     header {
@@ -53,20 +53,21 @@
 
     header h1 {
       display: inline-block;
-      margin: 1em auto 0;
-      font-size: 24px;
-      letter-spacing: 0.12em;
+      margin: 1.2em auto 0;
+      font-size: 30px;        /* título más grande */
+      letter-spacing: 0.16em;
       text-transform: lowercase;
       color: #000;
     }
 
+
     header img {
       display: block;
       margin: 70px auto;
-      height: 200px;
-      width: 200px;
-      max-width: 60vw;
-      border-radius: 50%;
+      height: 260px;
+      width: 260px;
+      max-width: 70vw;
+      border-radius: 14px;   /* esquinas redondeadas, no círculo */
       object-fit: cover;
     }
 
@@ -89,7 +90,7 @@
     }
 
     .post .text {
-      text-align: left;
+      text-align: center;
       font-size: 16px;
       color: #3a3a3a;
     }
@@ -118,19 +119,20 @@
     .albums {
       margin-top: 40px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;   /* columna vertical */
       gap: 18px;
-      justify-content: center;
+      align-items: center;      /* centra cada portada */
     }
 
     .albums a {
       display: block;
-      width: calc(33.333% - 12px);
-      max-width: 180px;
+      width: 260px;             /* tamaño base grande */
+      max-width: 90%;           /* que se adapte en móvil */
       position: relative;
       overflow: hidden;
       border-radius: 3px;
     }
+
 
     .albums img {
       width: 100%;
