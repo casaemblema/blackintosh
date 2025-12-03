@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>blackintosh</title>
 
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -24,14 +25,14 @@
     img{border:0}
     ul,li{margin:0;padding:0;list-style:none}
 
-    /* === Estilos base del layout (clon Tumblr) === */
+    /* === Estilos base === */
 
     html,
     body {
       margin: 0;
       padding: 0;
       min-height: 100%;
-      font-size: 1px; /* truco del tema original */
+      font-size: 1px;
       font-family: Helvetica, Arial, sans-serif;
       line-height: 155%;
       background: #ffffff;
@@ -41,7 +42,7 @@
       min-height: 100%;
       position: relative;
       background: #ffffff;
-      top: 370px; /* espacio para header fijo con avatar */
+      top: 370px;
     }
 
     header {
@@ -56,12 +57,11 @@
     header h1 {
       display: inline-block;
       margin: 1.2em auto 0;
-      font-size: 30px;        /* título más grande */
+      font-size: 30px;
       letter-spacing: 0.16em;
       text-transform: lowercase;
       color: #000;
     }
-
 
     header img {
       display: block;
@@ -69,12 +69,12 @@
       height: 260px;
       width: 260px;
       max-width: 70vw;
-      border-radius: 14px;   /* esquinas redondeadas, no círculo */
+      border-radius: 14px;
       object-fit: cover;
     }
 
     #content {
-      padding-bottom: 100px;   /* altura virtual del footer */
+      padding-bottom: 100px;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -98,8 +98,8 @@
     }
 
     .post .text p {
-      margin: 0.44em 0;   /* menos espacio vertical entre links */
-      line-height: 1.35;  /* ligeramente más compacto */
+      margin: 0.44em 0;
+      line-height: 1.35;
     }
 
     .post .text h3 {
@@ -108,7 +108,6 @@
       font-weight: normal;
     }
 
-    /* Enlaces del bloque de texto (links a plataformas) */
     .post .text a {
       border-bottom: 2px solid #000000;
       text-decoration: none;
@@ -122,30 +121,36 @@
       border-color: #000000;
     }
 
-    /* === Bloque de álbumes (imágenes con hover) === */
+    /* === Álbumes === */
 
     .albums {
       margin-top: 40px;
       display: flex;
-      flex-direction: column;   /* columna vertical */
+      flex-direction: column;
       gap: 18px;
-      align-items: center;      /* centra cada portada */
+      align-items: center;
     }
 
     .albums a {
       display: block;
-      width: 444px;        /* más grande todavía */
-      max-width: 100%;     /* usa todo el ancho disponible en pantallas chicas */
+      width: 444px;
+      max-width: 100%;
       position: relative;
       overflow: hidden;
       border-radius: 3px;
+
+      line-height: 0;           /* FIX: elimina borde fantasma inferior */
     }
-    
 
     .albums img {
       width: 100%;
       height: auto;
-      display: block;
+
+      display: block;           /* FIX: evita espacios inline */
+      margin: 0;                /* FIX */
+      padding: 0;               /* FIX */
+      border: none;             /* FIX */
+
       border-radius: 3px;
       transform: scale(1);
       transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
@@ -156,7 +161,7 @@
       box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
     }
 
-    /* Footer simple */
+    /* Footer */
     #footer {
       width: 100%;
       height: 100px;
@@ -174,13 +179,12 @@
       position: relative;
       top: 50%;
       transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
       margin: auto;
       font-size: 12px;
       color: #6a6a6a;
     }
 
-    /* Responsivo similar al tema original */
+    /* Responsivo */
     @media all and (min-width: 960px) {
       body{ font-size: 18px; }
       #content { width: 70%; }
@@ -197,7 +201,6 @@
       body{ font-size: 18px; }
       #content { width: 90%; }
       #posts { padding-top: 25px; }
-      /* ya NO redefinimos .albums a aquí */
     }
   </style>
 
@@ -207,22 +210,17 @@
 <body>
 
   <header>
-    <!-- TÍTULO -->
     <h1>blackintosh</h1>
-
-    <!-- AVATAR: sube avatar.jpg al repo -->
     <img src="avatar.jpg" alt="blackintosh">
   </header>
 
   <div id="wrapper">
     <div id="content">
       <div id="posts">
-
         <div class="post">
           <div class="text">
             <h3>(links)</h3>
 
-            <!-- LINKS A PLATAFORMAS: ajusta href y textos -->
             <p><a href="https://blackintosh.bandcamp.com/" target="_blank" rel="noopener">bandcamp</a></p>
             <p><a href="https://open.spotify.com/artist/0cGikq3a6EbAqdcVZs3MBh?si=y-ir5TL5Tm-wMXyE-tAifA" target="_blank" rel="noopener">spotify</a></p>
             <p><a href="https://music.apple.com/mx/artist/blackintosh/1466724495?l=en" target="_blank" rel="noopener">apple music</a></p>
@@ -230,41 +228,17 @@
             <p><a href="https://music.amazon.com.mx/artists/B07SD5HHXK?ref=dm_sh_ozoSBKROyMQR4HiwfCmCc9T3c" target="_blank" rel="noopener">amazon music</a></p>
             <p><a href="https://deezer.page.link/8cAr2Le4jajEBVSJ8" target="_blank" rel="noopener">deezer</a></p>
 
-            <!-- Bloque de álbumes: cada imagen es un link a Bandcamp -->
             <div class="albums">
-              <!-- Álbum 1 -->
-              <a href="https://blackintosh.bandcamp.com/album/sensorial" target="_blank" rel="noopener">
-                <img src="1.jpg" alt="Álbum 1">
-              </a>
-
-              <!-- Álbum 2 -->
-              <a href="https://blackintosh.bandcamp.com/album/rawness" target="_blank" rel="noopener">
-                <img src="2.jpg" alt="Álbum 2">
-              </a>
-
-              <!-- Álbum 3 -->
-              <a href="https://blackintosh.bandcamp.com/album/un-savvy" target="_blank" rel="noopener">
-                <img src="3.jpg" alt="Álbum 3">
-              </a>
-
-              <!-- Álbum 4 -->
-              <a href="https://blackintosh.bandcamp.com/album/life-fx" target="_blank" rel="noopener">
-                <img src="4.jpg" alt="Álbum 4">
-              </a>
-
-              <!-- Álbum 5 -->
-              <a href="https://blackintosh.bandcamp.com/album/rework-s" target="_blank" rel="noopener">
-                <img src="5.jpg" alt="Álbum 5">
-              </a>
-
-              <!-- Álbum 6 -->
-              <a href="https://blackintosh.bandcamp.com/album/2-53" target="_blank" rel="noopener">
-                <img src="6.jpg" alt="Álbum 6">
-              </a>
+              <a href="https://blackintosh.bandcamp.com/album/sensorial" target="_blank" rel="noopener"><img src="1.jpg" alt="Álbum 1"></a>
+              <a href="https://blackintosh.bandcamp.com/album/rawness" target="_blank" rel="noopener"><img src="2.jpg" alt="Álbum 2"></a>
+              <a href="https://blackintosh.bandcamp.com/album/un-savvy" target="_blank" rel="noopener"><img src="3.jpg" alt="Álbum 3"></a>
+              <a href="https://blackintosh.bandcamp.com/album/life-fx" target="_blank" rel="noopener"><img src="4.jpg" alt="Álbum 4"></a>
+              <a href="https://blackintosh.bandcamp.com/album/rework-s" target="_blank" rel="noopener"><img src="5.jpg" alt="Álbum 5"></a>
+              <a href="https://blackintosh.bandcamp.com/album/2-53" target="_blank" rel="noopener"><img src="6.jpg" alt="Álbum 6"></a>
             </div>
+
           </div>
         </div>
-
       </div>
     </div>
 
@@ -276,7 +250,6 @@
   </div>
 
   <script>
-    // año automático en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
