@@ -25,7 +25,7 @@
     ul,li{margin:0;padding:0;list-style:none}
 
 
-    /* === MODO OSCURO GLOBAL === */
+    /* === MODO OSCURO GLOBAL (ligeramente “lavado”) === */
     body {
       margin: 0;
       padding: 0;
@@ -33,18 +33,16 @@
       font-size: 1px;
       font-family: Helvetica, Arial, sans-serif;
       line-height: 155%;
-      background: #000000;          /* DARK MODE */
-      color: #ffffff;               /* DARK MODE */
+      background: #050505;          /* negro un “escalón” menos duro */
+      color: #050505;               /* MISMO color que el fondo → texto genérico invisible */
     }
-
 
     #wrapper {
       min-height: 100%;
       position: relative;
-      background: #000000;          /* DARK MODE */
+      background: #050505;
       top: 370px;
     }
-
 
     header {
       position: fixed;
@@ -61,7 +59,7 @@
       font-size: 30px;
       letter-spacing: 0.16em;
       text-transform: lowercase;
-      color: #ffffff;               /* DARK MODE */
+      color: #f5f5f5;               /* visible */
     }
 
     header img {
@@ -74,7 +72,6 @@
       object-fit: cover;
     }
 
-
     #content {
       padding-bottom: 100px;
       max-width: 700px;
@@ -86,7 +83,7 @@
     }
 
     .post {
-      background: #000000;          /* DARK MODE */
+      background: #050505;
       padding: 12px;
       clear: both;
       border-radius: 3px;
@@ -96,7 +93,7 @@
     .post .text {
       text-align: center;
       font-size: 16px;
-      color: #ffffff;               /* DARK MODE */
+      color: #f5f5f5;               /* visible */
     }
 
     .post .text p {
@@ -108,14 +105,14 @@
       margin-top: 0;
       font-size: 18px;
       font-weight: normal;
-      color: #ffffff;               /* DARK MODE */
+      color: #f5f5f5;               /* visible */
     }
 
-    /* === LINKS EN MODO OSCURO === */
+    /* LINKS en modo oscuro */
     .post .text a {
-      border-bottom: 2px solid #ffffff;  /* DARK MODE */
+      border-bottom: 2px solid #f5f5f5;
       text-decoration: none;
-      color: #eeeeee;                    /* DARK MODE */
+      color: #eaeaea;
       transition: color 0.3s ease, border-color 0.3s ease;
       font-style: italic;
     }
@@ -127,13 +124,14 @@
 
 
     /* === Álbumes === */
-
     .albums {
       margin-top: 40px;
       display: flex;
       flex-direction: column;
       gap: 18px;
       align-items: center;
+
+      font-size: 0;                 /* TRUCO: elimina cualquier inline/texto fantasma */
     }
 
     .albums a {
@@ -144,8 +142,8 @@
       overflow: hidden;
       border-radius: 3px;
 
-      line-height: 0;
-      background: #000000;        /* DARK MODE */
+      line-height: 0;               /* refuerzo anti-línea */
+      background: #050505;
       border: 0;
     }
 
@@ -159,14 +157,12 @@
       border-radius: 3px;
 
       transform: scale(1);
-
-      /* sombra más suave para fondo negro */
       transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
     }
 
     .albums a:hover img {
       transform: scale(1.04);
-      box-shadow: 0 10px 32px rgba(255, 255, 255, 0.12);   /* sombra clara */
+      box-shadow: 0 10px 32px rgba(255, 255, 255, 0.12);
     }
 
 
@@ -190,7 +186,7 @@
       transform: translateY(-50%);
       margin: auto;
       font-size: 12px;
-      color: #aaaaaa;              /* DARK MODE */
+      color: #aaaaaa;              /* visible */
     }
 
 
