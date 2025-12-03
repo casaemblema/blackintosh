@@ -95,6 +95,11 @@
       color: #3a3a3a;
     }
 
+    .post .text p {
+      margin: 0.25em 0;   /* menos espacio vertical entre links */
+    line-height: 1.25;  /* ligeramente más compacto */
+    }
+
     .post .text h3 {
       margin-top: 0;
       font-size: 18px;
@@ -126,13 +131,13 @@
 
     .albums a {
       display: block;
-      width: 260px;             /* tamaño base grande */
-      max-width: 90%;           /* que se adapte en móvil */
+      width: 360px;        /* más grande todavía */
+      max-width: 100%;     /* usa todo el ancho disponible en pantallas chicas */
       position: relative;
       overflow: hidden;
       border-radius: 3px;
     }
-
+    
 
     .albums img {
       width: 100%;
@@ -189,9 +194,7 @@
       body{ font-size: 18px; }
       #content { width: 90%; }
       #posts { padding-top: 25px; }
-      .albums a {
-        width: 45%; /* 2 por fila en móvil */
-      }
+      /* ya NO redefinimos .albums a aquí */
     }
   </style>
 
